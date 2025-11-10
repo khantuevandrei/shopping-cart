@@ -52,6 +52,8 @@ export default function Card({ id, title, image, price }: CardProps) {
         return [...prevItems, newItem];
       }
     });
+
+    setAmount(0);
   }
 
   return (
