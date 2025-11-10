@@ -15,6 +15,7 @@ export default function Card({ id, title, image, price }: CardProps) {
 
   function handleChange(e) {
     const newAmount = e.target.value;
+    if (newAmount === "") setAmount(0);
     if (!Number(newAmount)) return;
     setAmount(Number(newAmount));
   }

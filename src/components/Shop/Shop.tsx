@@ -15,6 +15,7 @@ export default function Shop() {
         if (!response.ok) throw new Error("Failed to fetch items");
         const data = await response.json();
         setItemList(data);
+        console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -34,6 +35,7 @@ export default function Shop() {
         return (
           <Card
             key={item.id}
+            id={item.id}
             title={item.title}
             image={item.image}
             price={item.price}
