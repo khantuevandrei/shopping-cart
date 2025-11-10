@@ -5,14 +5,14 @@
   gap: 1rem;
 }
 
-img {
+.img {
   border-radius: 1rem;
 }
 
-h1 {
+.heading {
   font-size: 2rem;
 }
 
-p {
+.para {
   font-size: 1.5rem;
 }
