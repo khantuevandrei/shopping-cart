@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Shop.module.css";
-import Card from "../Card/Card";
+import ShopCard from "../ShopCard/ShopCard";
 import { useOutletContext } from "react-router";
 
 export default function Shop() {
@@ -36,7 +36,7 @@ export default function Shop() {
     <div className={styles.cardGrid}>
       {itemList.map((item) => {
         return (
-          <Card
+          <ShopCard
             key={item.id}
             id={item.id}
             title={item.title}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Card.module.css";
+import styles from "./ShopCard.module.css";
 import { useOutletContext } from "react-router";
 
 type CardProps = {
