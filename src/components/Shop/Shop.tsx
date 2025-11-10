@@ -5,6 +5,7 @@ import Card from "../Card/Card";
 export default function Shop() {
   const [itemList, setItemList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchItems() {
@@ -15,7 +16,7 @@ export default function Shop() {
         const data = await response.json();
         setItemList(data);
       } catch (err) {
-        console.log(err);
+        setError(err.message);
       } finally {
         setIsLoading(false);
       }
@@ -25,6 +26,7 @@ export default function Shop() {
   }, []);
 
   if (isLoading) return <p className={styles.loading}>Loading...</p>;
+  if (error) return <p className={styles.error}>Error: {error}</p>;
 
   return (
     <div className={styles.cardGrid}>
