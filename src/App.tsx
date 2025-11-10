@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { Outlet } from "react-router";
 
 function App() {
+  const [itemList, setItemList] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartAmount, setCartAmount] = useState(0);
 
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <NavBar cartAmount={cartAmount} />
-      <Outlet context={{ cartItems, setCartItems }} />
+      <Outlet context={{ cartItems, setCartItems, itemList, setItemList }} />
     </>
   );
 }

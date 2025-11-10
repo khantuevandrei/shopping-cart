@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import styles from "./Shop.module.css";
 import Card from "../Card/Card";
+import { useOutletContext } from "react-router";
 
 export default function Shop() {
-  const [itemList, setItemList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { itemList, setItemList } = useOutletContext();
 
   useEffect(() => {
     async function fetchItems() {
+      if (itemList && itemList.length > 0) return;
+
       try {
         setIsLoading(true);
         const response = await fetch("https://fakestoreapi.com/products");
@@ -24,7 +27,7 @@ export default function Shop() {
     }
 
     fetchItems();
-  }, []);
+  }, [itemList, setItemList]);
 
   if (isLoading) return <p className={styles.loading}>Loading...</p>;
   if (error) return <p className={styles.error}>Error: {error}</p>;
