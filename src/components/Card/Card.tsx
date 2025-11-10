@@ -12,6 +12,12 @@ export default function Card({ title, image, price }: CardProps) {
   const [amount, setAmount] = useState(0);
   const { cartItems, setCartItems } = useOutletContext();
 
+  function handleChange(e) {
+    const newAmount = e.target.value;
+    if (!Number(newAmount)) return;
+    setAmount(Number(newAmount));
+  }
+
   function handleIncrement() {
     setAmount((prev) => prev + 1);
   }
@@ -40,7 +46,12 @@ export default function Card({ title, image, price }: CardProps) {
       <h2 className={styles.itemPrice}>${price}</h2>
       <div>
         <button onClick={handleDecrement}>-</button>
-        <input className={styles.quantity} type="num" value={amount} />
+        <input
+          onChange={handleChange}
+          className={styles.quantity}
+          type="num"
+          value={amount}
+        />
         <button onClick={handleIncrement}>+</button>
       </div>
       <button onClick={handleBuy} className={styles.buy}>
