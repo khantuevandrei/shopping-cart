@@ -3,12 +3,13 @@ import styles from "./Card.module.css";
 import { useOutletContext } from "react-router";
 
 type CardProps = {
+  id: number;
   title: string;
   image: string;
   price: number;
 };
 
-export default function Card({ title, image, price }: CardProps) {
+export default function Card({ id, title, image, price }: CardProps) {
   const [amount, setAmount] = useState(0);
   const { cartItems, setCartItems } = useOutletContext();
 
@@ -31,12 +32,25 @@ export default function Card({ title, image, price }: CardProps) {
     if (amount === 0) return;
 
     const newItem = {
+      id: id,
       title: title,
       price: price,
       amount: amount,
     };
-    setCartItems((prev) => [...prev, newItem]);
-    setAmount(0);
+
+    setCartItems((prevItems) => {
+      const foundItem = prevItems.find((item) => item.id === newItem.id);
+
+      if (foundItem) {
+        return prevItems.map((item) =>
+          item.id === newItem.id
+            ? { ...item, amount: item.amount + newItem.amount }
+            : item
+        );
+      } else {
+        return [...prevItems, newItem];
+      }
+    });
   }
 
   return (
