@@ -1,11 +1,9 @@
 import { useOutletContext } from "react-router";
 import styles from "./Cart.module.css";
-import Card from "../ShopCard/ShopCard";
+import CartCard from "../CartCard/CartCard";
 
 export default function Cart() {
   const { cartItems, setCartItems } = useOutletContext();
-
-  function handleIncrement() {}
 
   return (
     <>
@@ -13,23 +11,14 @@ export default function Cart() {
       <div className={styles.cardGrid}>
         {cartItems.map((item) => {
           return (
-            <div className={styles.card}>
-              <h3 className={styles.itemTitle}>{item.title}</h3>
-              <img className={styles.img} src={item.image} alt="" />
-              <div>
-                <button>-</button>
-                <input
-                  className={styles.itemAmount}
-                  type="num"
-                  value={item.amount}
-                />
-                <button>+</button>
-              </div>
-
-              <p className={styles.itemPrice}>
-                Price: ${item.price * item.amount}
-              </p>
-            </div>
+            <CartCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              amount={item.amount}
+              price={item.price}
+            />
           );
         })}
       </div>
