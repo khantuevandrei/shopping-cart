@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import styles from "./NavBar.module.css";
 
-export default function NavBar() {
+export default function NavBar({ cartItems }) {
   return (
     <header className={styles.navBar}>
       <Link to="/" className={styles.link}>
@@ -11,7 +11,7 @@ export default function NavBar() {
         Shop
       </Link>
       <Link to="/cart" className={styles.link}>
-        Cart
+        Cart: {cartItems}
       </Link>
     </header>
   );
