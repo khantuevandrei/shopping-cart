@@ -37,6 +37,7 @@ export default function Card({ id, title, image, price }: CardProps) {
       title: title,
       price: price,
       amount: amount,
+      image: image,
     };
 
     setCartItems((prevItems) => {
