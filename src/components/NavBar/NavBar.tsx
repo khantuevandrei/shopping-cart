@@ -1,7 +1,11 @@
 import { Link } from "react-router";
 import styles from "./NavBar.module.css";
 
-export default function NavBar({ cartItems }) {
+type NavBarProps = {
+  cartAmount: number;
+};
+
+export default function NavBar({ cartAmount }: NavBarProps) {
   return (
     <header className={styles.navBar}>
       <Link to="/" className={styles.link}>
@@ -11,7 +15,7 @@ export default function NavBar({ cartItems }) {
         Shop
       </Link>
       <Link to="/cart" className={styles.link}>
-        Cart: {cartItems}
+        Cart: {cartAmount}
       </Link>
     </header>
   );
