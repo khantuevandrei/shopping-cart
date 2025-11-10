@@ -22,6 +22,8 @@ export default function Card({ title, image, price }: CardProps) {
   }
 
   function handleBuy() {
+    if (amount === 0) return;
+
     const newItem = {
       title: title,
       price: price,
@@ -42,7 +44,7 @@ export default function Card({ title, image, price }: CardProps) {
         <button onClick={handleIncrement}>+</button>
       </div>
       <button onClick={handleBuy} className={styles.buy}>
-        Buy
+        Add To Cart
       </button>
     </div>
   );
