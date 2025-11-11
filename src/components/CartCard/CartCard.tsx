@@ -22,7 +22,6 @@ export default function CartCard({
     let newAmount = e.target.value;
 
     if (newAmount === "") {
-      // Update the input to show empty
       setCartItems(
         cartItems.map((item) =>
           item.id === id ? { ...item, amount: "" as any } : item
@@ -31,12 +30,12 @@ export default function CartCard({
       return;
     }
 
-    const numericValue = Number(newValue);
+    const numericValue = Number(newAmount);
     if (isNaN(numericValue)) return;
 
     setCartItems(
       cartItems.map((item) =>
-        item.id === id ? { ...item, amount: Number(newAmount) } : item
+        item.id === id ? { ...item, amount: numericValue } : item
       )
     );
   }
