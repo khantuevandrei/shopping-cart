@@ -20,8 +20,19 @@ export default function CartCard({
 
   function handleChange(e) {
     let newAmount = e.target.value;
-    if (newAmount === "") newAmount = 0;
-    if (!Number(newAmount)) return;
+
+    if (newAmount === "") {
+      // Update the input to show empty
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === id ? { ...item, amount: "" as any } : item
+        )
+      );
+      return;
+    }
+
+    const numericValue = Number(newValue);
+    if (isNaN(numericValue)) return;
 
     setCartItems(
       cartItems.map((item) =>
@@ -33,18 +44,18 @@ export default function CartCard({
   function handleIncrement() {
     setCartItems(
       cartItems.map((item) =>
-        item.id === id ? { ...item, amount: item.amount + 1 } : item
+        item.id === id ? { ...item, amount: Number(item.amount) + 1 } : item
       )
     );
   }
 
   function handleDecrement() {
-    if (amount === 1) {
+    if (amount === 1 || amount === "") {
       setCartItems(cartItems.filter((item) => item.id !== id));
     } else {
       setCartItems(
         cartItems.map((item) =>
-          item.id === id ? { ...item, amount: item.amount - 1 } : item
+          item.id === id ? { ...item, amount: Number(item.amount) - 1 } : item
         )
       );
     }
@@ -57,7 +68,7 @@ export default function CartCard({
   return (
     <div className={styles.card}>
       <h3 className={styles.itemTitle}>{title}</h3>
-      <img className={styles.img} src={image} alt="" />
+      <img className={styles.img} src={image} alt={title} />
       <div>
         <button onClick={handleDecrement}>-</button>
         <input
@@ -69,7 +80,7 @@ export default function CartCard({
         <button onClick={handleIncrement}>+</button>
       </div>
       <button onClick={handleDelete}>delete</button>
-      <p className={styles.itemPrice}>${(price * amount).toFixed(2)}</p>
+      <h3 className={styles.itemPrice}>${(price * amount).toFixed(2)}</h3>
     </div>
   );
 }
