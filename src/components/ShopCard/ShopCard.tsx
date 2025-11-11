@@ -2,22 +2,28 @@ import { useState } from "react";
 import styles from "./ShopCard.module.css";
 import { useOutletContext } from "react-router";
 
-type CardProps = {
+type ShopCardProps = {
   id: number;
   title: string;
   image: string;
   price: number;
 };
 
-export default function Card({ id, title, image, price }: CardProps) {
-  const [amount, setAmount] = useState(0);
+export default function ShopCard({ id, title, image, price }: ShopCardProps) {
+  const [amount, setAmount] = useState(1);
   const { cartItems, setCartItems } = useOutletContext();
 
   function handleChange(e) {
-    const newAmount = e.target.value;
-    if (newAmount === "") setAmount(0);
-    if (!Number(newAmount)) return;
-    setAmount(Number(newAmount));
+    const newValue = e.target.value;
+    if (newValue === "") {
+      setAmount("");
+      return;
+    }
+
+    const numericValue = Number(newValue);
+    if (isNaN(numericValue)) return;
+
+    setAmount(numericValue);
   }
 
   function handleIncrement() {
@@ -31,6 +37,7 @@ export default function Card({ id, title, image, price }: CardProps) {
 
   function handleBuy() {
     if (amount === 0) return;
+    if (amount === "") return;
 
     const newItem = {
       id: id,
@@ -54,7 +61,7 @@ export default function Card({ id, title, image, price }: CardProps) {
       }
     });
 
-    setAmount(0);
+    setAmount(1);
   }
 
   return (
@@ -67,7 +74,7 @@ export default function Card({ id, title, image, price }: CardProps) {
         <input
           onChange={handleChange}
           className={styles.quantity}
-          type="num"
+          type="tel"
           value={amount}
         />
         <button onClick={handleIncrement}>+</button>

@@ -18,7 +18,6 @@ export default function Shop() {
         if (!response.ok) throw new Error("Failed to fetch items");
         const data = await response.json();
         setItemList(data);
-        console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {
