@@ -6,7 +6,7 @@ export default function Home() {
       <div>
         <h1 className={styles.heading}>Welcome to Tote</h1>
         <p className={styles.para}>
-          100 year history of handmade jewelry & clothing.
+          A long history of handmade jewelry & clothing.
         </p>
         <p className={styles.para}>
           We take pride in the quality of our goods.

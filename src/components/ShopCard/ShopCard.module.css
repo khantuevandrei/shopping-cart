@@ -1,22 +1,44 @@
+@font-face {
+  font-family: "Momo Regular";
+  src: url("src/assets/MomoTrustSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Momo Bold";
+  src: url("src/assets/MomoTrustDisplay-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .card {
   height: 450px;
-  border: 1px solid;
   display: grid;
-  grid-template-rows: auto 1fr auto auto auto;
+  grid-template-rows: 1fr auto auto auto auto;
   justify-items: center;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  font-family: "Momo Regular";
+  cursor: default;
 }
 
 .img {
-  max-height: 200px;
-  max-width: 250px;
+  max-height: 250px;
+  max-width: 300px;
   margin-top: auto;
   margin-bottom: auto;
+  transition: transform 0.2s ease;
+}
+
+.img:hover {
+  transform: scale(1.2);
 }
 
 .itemTitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   max-height: 1lh;
   overflow: hidden;
@@ -25,20 +47,44 @@
 }
 
 .itemPrice {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin: 0;
 }
 
 .quantity {
   margin: 0.5rem;
   width: 2rem;
+  height: 2rem;
   text-align: center;
+  font-family: "Momo Regular";
+  border: none;
+  font-size: 1rem;
 }
 
-.buy {
+.add {
+  font-family: "Momo Regular";
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  background: none;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add:hover {
+  background-color: black;
+  color: white;
+}
+
+.change {
+  font-family: "Momo Regular";
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }

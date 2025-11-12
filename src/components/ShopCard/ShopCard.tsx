@@ -35,7 +35,7 @@ export default function ShopCard({ id, title, image, price }: ShopCardProps) {
     setAmount((prev) => prev - 1);
   }
 
-  function handleBuy() {
+  function handleAdd() {
     if (amount === 0) return;
     if (amount === "") return;
 
@@ -66,21 +66,25 @@ export default function ShopCard({ id, title, image, price }: ShopCardProps) {
 
   return (
     <div className={styles.card}>
-      <h2 className={styles.itemTitle}>{title}</h2>
       <img className={styles.img} src={image} alt={title} />
+      <h2 className={styles.itemTitle}>{title}</h2>
       <h2 className={styles.itemPrice}>${price}</h2>
       <div>
-        <button onClick={handleDecrement}>-</button>
+        <button className={styles.change} onClick={handleDecrement}>
+          -
+        </button>
         <input
           onChange={handleChange}
           className={styles.quantity}
           type="tel"
           value={amount}
         />
-        <button onClick={handleIncrement}>+</button>
+        <button className={styles.change} onClick={handleIncrement}>
+          +
+        </button>
       </div>
-      <button onClick={handleBuy} className={styles.buy}>
-        Add To Cart
+      <button onClick={handleAdd} className={styles.add}>
+        Add
       </button>
     </div>
   );

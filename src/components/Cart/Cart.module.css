@@ -1,12 +1,10 @@
-.heading {
-  font-size: 2rem;
-  text-align: center;
-  margin: 4rem 0;
-}
-
 .cardGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+}
+
+.heading {
+  margin: 0;
 }

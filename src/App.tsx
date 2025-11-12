@@ -7,7 +7,6 @@ function App() {
   const [itemList, setItemList] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartAmount, setCartAmount] = useState(0);
-  const [bgClass, setBgClass] = useState("bgImage");
   const location = useLocation();
 
   useEffect(() => {
@@ -22,18 +21,13 @@ function App() {
     handleAmount();
   }, [cartItems]);
 
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setBgClass("bgImage");
-    } else {
-      setBgClass("bgWhite");
-    }
-  }, [location.pathname]);
+  const isHome = location.pathname === "/";
+  const bgClass = isHome ? "bgImage" : "bgWhite";
 
   return (
     <>
       <NavBar cartAmount={cartAmount} />
-      <main className={`main ${bgClass}`}>
+      <main className={bgClass}>
         <Outlet context={{ cartItems, setCartItems, itemList, setItemList }} />
       </main>
     </>
