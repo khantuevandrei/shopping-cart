@@ -22,7 +22,7 @@ describe("CartCard renders correctly", () => {
     render(
       <CartCard id={1} title={"item"} image={"url"} amount={2} price={10} />
     );
-    expect(screen.getByRole("img")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "item" })).toBeInTheDocument();
   });
   it("renders the price", () => {
     render(

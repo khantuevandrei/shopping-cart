@@ -5,41 +5,21 @@ exports[`Home component > matches the snapshot 1`] = `
   <div
     class="_container_d6eec2"
   >
-    <img
-      alt=""
-      class="_img_d6eec2"
-      src="src/assets/shop.jpg"
-    />
     <div>
       <h1
         class="_heading_d6eec2"
       >
-        Welcome to Shop!
+        Welcome to Tote
       </h1>
       <p
         class="_para_d6eec2"
       >
-        Use the navigation bar on top of the page.
+        A long history of handmade jewelry & clothing.
       </p>
       <p
         class="_para_d6eec2"
       >
-        Visit us at:
-      </p>
-      <p
-        class="_para_d6eec2"
-      >
-        123, Fake Road, Fake Town
-      </p>
-      <p
-        class="_para_d6eec2"
-      >
-        Contact us:
-      </p>
-      <p
-        class="_para_d6eec2"
-      >
-        fake@fakemail.com
+        We take pride in the quality of our goods.
       </p>
     </div>
   </div>

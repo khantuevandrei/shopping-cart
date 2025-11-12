@@ -36,11 +36,9 @@ describe("ShopCard renders correctly", () => {
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
     expect(screen.getByRole("button", { name: /\+/i })).toBeInTheDocument();
   });
-  it("renders the Add To Cart btn", () => {
+  it("renders the Add btn", () => {
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
-    expect(
-      screen.getByRole("button", { name: /Add To Cart/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Add/i })).toBeInTheDocument();
   });
 });
 
@@ -121,7 +119,7 @@ describe("input works as expected", () => {
   });
 });
 
-describe("Add To Cart btn works as expected", () => {
+describe("Add btn works as expected", () => {
   beforeEach(() => {
     mockSetCartItems.mockClear();
   });
@@ -130,7 +128,7 @@ describe("Add To Cart btn works as expected", () => {
 
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
 
-    const button = screen.getByRole("button", { name: "Add To Cart" });
+    const button = screen.getByRole("button", { name: "Add" });
 
     await user.click(button);
 
@@ -141,7 +139,7 @@ describe("Add To Cart btn works as expected", () => {
 
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
 
-    const button = screen.getByRole("button", { name: "Add To Cart" });
+    const button = screen.getByRole("button", { name: "Add" });
 
     await user.click(button);
 
@@ -157,7 +155,7 @@ describe("Add To Cart btn works as expected", () => {
 
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
 
-    const button = screen.getByRole("button", { name: "Add To Cart" });
+    const button = screen.getByRole("button", { name: "Add" });
 
     await user.click(button);
 
@@ -179,7 +177,7 @@ describe("Add To Cart btn works as expected", () => {
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
 
     const input = screen.getByRole("textbox");
-    const button = screen.getByRole("button", { name: "Add To Cart" });
+    const button = screen.getByRole("button", { name: "Add" });
 
     await user.clear(input);
     await user.type(input, "0");
@@ -193,7 +191,7 @@ describe("Add To Cart btn works as expected", () => {
     render(<ShopCard id={1} title={"item"} image={"url"} price={10} />);
 
     const input = screen.getByRole("textbox");
-    const button = screen.getByRole("button", { name: "Add To Cart" });
+    const button = screen.getByRole("button", { name: "Add" });
 
     await user.clear(input);
     await user.click(button);

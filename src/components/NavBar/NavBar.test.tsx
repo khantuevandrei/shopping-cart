@@ -10,7 +10,7 @@ describe("NavBar", () => {
         <NavBar cartAmount={3} />
       </MemoryRouter>
     );
-    expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /about/i })).toBeInTheDocument();
   });
   it("renders Shop link", () => {
     render(
@@ -18,7 +18,7 @@ describe("NavBar", () => {
         <NavBar cartAmount={3} />
       </MemoryRouter>
     );
-    expect(screen.getByRole("link", { name: /shop/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Shop" })).toBeInTheDocument();
   });
   it("renders Cart link with correct number", () => {
     render(
@@ -26,6 +26,8 @@ describe("NavBar", () => {
         <NavBar cartAmount={3} />
       </MemoryRouter>
     );
-    expect(screen.getByRole("link", { name: "Cart: 3" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /shopping cart/i })
+    ).toBeInTheDocument();
   });
 });

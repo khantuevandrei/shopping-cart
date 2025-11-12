@@ -83,7 +83,7 @@ export default function CartCard({
         </button>
       </div>
       <button className={styles.delete} onClick={handleDelete}>
-        <img src="src/assets/bin.png" alt="" />
+        <img src="src/assets/bin.png" alt="delete" />
       </button>
       <h3 className={styles.itemPrice}>${(price * amount).toFixed(2)}</h3>
     </div>
