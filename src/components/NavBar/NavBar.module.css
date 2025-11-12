@@ -1,4 +1,40 @@
+@font-face {
+  font-family: "Momo Bold";
+  src: url("src/assets/MomoTrustDisplay-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .navBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2rem;
+  font-family: "Momo Bold";
+  padding: 0 2rem;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+.heading,
+.para {
+  margin: 0;
+}
+
+.heading {
+  font-size: 3rem;
+}
+
+.para {
+  margin-top: -1rem;
+  font-size: 1rem;
+}
+
+.middle {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -6,6 +42,24 @@
 
 .link {
   text-decoration: none;
-  color: white;
-  font-size: 2rem;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.icon {
+  height: 2.5rem;
+}
+
+.amount {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  color: black;
 }
