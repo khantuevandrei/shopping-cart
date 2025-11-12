@@ -69,16 +69,22 @@ export default function CartCard({
       <h3 className={styles.itemTitle}>{title}</h3>
       <img className={styles.img} src={image} alt={title} />
       <div>
-        <button onClick={handleDecrement}>-</button>
+        <button className={styles.change} onClick={handleDecrement}>
+          -
+        </button>
         <input
           onChange={handleChange}
           className={styles.itemAmount}
           type="num"
           value={amount}
         />
-        <button onClick={handleIncrement}>+</button>
+        <button className={styles.change} onClick={handleIncrement}>
+          +
+        </button>
       </div>
-      <button onClick={handleDelete}>delete</button>
+      <button className={styles.delete} onClick={handleDelete}>
+        <img src="src/assets/bin.png" alt="" />
+      </button>
       <h3 className={styles.itemPrice}>${(price * amount).toFixed(2)}</h3>
     </div>
   );

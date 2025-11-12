@@ -6,7 +6,7 @@ export default function Cart() {
   const { cartItems, setCartItems } = useOutletContext();
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <h2 className={styles.heading}>Your Cart:</h2>
       <div className={styles.cardGrid}>
         {cartItems.map((item) => {
@@ -28,6 +28,6 @@ export default function Cart() {
           .reduce((acc, curr) => acc + curr.price * curr.amount, 0)
           .toFixed(2)}
       </h2>
-    </>
+    </div>
   );
 }

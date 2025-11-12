@@ -1,11 +1,21 @@
+@font-face {
+  font-family: "Momo Regular";
+  src: url("src/assets/MomoTrustSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .card {
+  font-family: "Momo Regular";
   width: 200px;
   border: 1px solid;
   display: grid;
   grid-template-rows: auto 1fr auto auto auto;
   justify-items: center;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  cursor: default;
 }
 
 .img {
@@ -16,7 +26,7 @@
 }
 
 .itemTitle {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   max-height: 1lh;
   overflow: hidden;
@@ -25,13 +35,35 @@
 }
 
 .itemAmount {
+  font-family: "Momo Regular";
   margin: 0.5rem;
   width: 2rem;
   text-align: center;
+  border: none;
+  font-size: 1rem;
 }
 
 .itemPrice {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.change {
+  font-family: "Momo Regular";
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete {
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.delete > img {
+  height: 1.5rem;
 }
