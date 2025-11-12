@@ -30,6 +30,9 @@ function App() {
       <main className={bgClass}>
         <Outlet context={{ cartItems, setCartItems, itemList, setItemList }} />
       </main>
+      <footer>
+        <p>This website is for demonstration purposes only</p>
+      </footer>
     </>
   );
 }
