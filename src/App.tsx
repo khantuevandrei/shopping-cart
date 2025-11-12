@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
+import "./App.css";
 
 function App() {
   const [itemList, setItemList] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartAmount, setCartAmount] = useState(0);
+  const [bgClass, setBgClass] = useState("bgImage");
+  const location = useLocation();
 
   useEffect(() => {
     function handleAmount() {
@@ -20,10 +22,20 @@ function App() {
     handleAmount();
   }, [cartItems]);
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setBgClass("bgImage");
+    } else {
+      setBgClass("bgWhite");
+    }
+  }, [location.pathname]);
+
   return (
     <>
       <NavBar cartAmount={cartAmount} />
-      <Outlet context={{ cartItems, setCartItems, itemList, setItemList }} />
+      <main className={`main ${bgClass}`}>
+        <Outlet context={{ cartItems, setCartItems, itemList, setItemList }} />
+      </main>
     </>
   );
 }
