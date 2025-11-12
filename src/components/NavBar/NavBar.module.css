@@ -13,6 +13,9 @@
   gap: 2rem;
   font-family: "Momo Bold";
   padding: 0 2rem;
+  padding-bottom: 0.5rem;
+  height: 10vh;
+  box-sizing: border-box;
 }
 
 .logo {
