@@ -28,8 +28,8 @@ export default function Shop() {
     fetchItems();
   }, [itemList, setItemList]);
 
-  if (isLoading) return <p className={styles.loading}>Loading...</p>;
-  if (error) return <p className={styles.error}>Error: {error}</p>;
+  if (isLoading) return <div className={styles.loading}>Loading...</div>;
+  if (error) return <div className={styles.error}>Error: {error}</div>;
 
   return (
     <div className={styles.cardGrid}>

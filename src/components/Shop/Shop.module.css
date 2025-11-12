@@ -1,8 +1,19 @@
+@font-face {
+  font-family: "Momo Regular";
+  src: url("/MomoTrustSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .loading,
 .error {
+  font-family: "Momo Regular";
   font-size: 2rem;
-  text-align: center;
-  margin-top: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
 }
 
 .cardGrid {
@@ -10,4 +21,5 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 4rem;
   padding: 2rem 4rem;
+  min-height: 80vh;
 }

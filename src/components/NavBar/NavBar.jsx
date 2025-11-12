@@ -21,7 +21,7 @@ export default function NavBar({ cartAmount }) {
       <Link to="/cart" className={styles.cart}>
         <img
           className={styles.icon}
-          src="src/assets/shopping-cart.png"
+          src="/shopping-cart.png"
           alt="shopping cart"
         />
         <div className={styles.amount}>{cartAmount}</div>
