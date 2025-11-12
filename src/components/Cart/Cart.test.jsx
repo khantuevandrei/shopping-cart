@@ -2,6 +2,7 @@ import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import * as ReactRouter from "react-router";
 import Cart from "./Cart";
+import "@testing-library/jest-dom";
 
 const mockSetCartItems = vi.fn();
 

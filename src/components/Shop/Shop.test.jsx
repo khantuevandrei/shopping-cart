@@ -27,7 +27,7 @@ beforeEach(() => {
       ok: true,
       json: () => Promise.resolve(mockResponse),
     })
-  ) as any;
+  );
 });
 
 describe("Loading", () => {
@@ -49,7 +49,7 @@ describe("Loading", () => {
 
 describe("Error", () => {
   it("is shown when fetch fails", async () => {
-    global.fetch = vi.fn(() => Promise.resolve({ ok: false })) as any;
+    global.fetch = vi.fn(() => Promise.resolve({ ok: false }));
 
     render(<Shop />);
 

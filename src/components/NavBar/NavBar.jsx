@@ -1,11 +1,7 @@
 import { Link } from "react-router";
 import styles from "./NavBar.module.css";
 
-type NavBarProps = {
-  cartAmount: number;
-};
-
-export default function NavBar({ cartAmount }: NavBarProps) {
+export default function NavBar({ cartAmount }) {
   return (
     <header className={styles.navBar}>
       <Link to="/" className={styles.logo}>

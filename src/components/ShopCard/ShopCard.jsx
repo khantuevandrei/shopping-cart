@@ -2,14 +2,7 @@ import { useState } from "react";
 import styles from "./ShopCard.module.css";
 import { useOutletContext } from "react-router";
 
-type ShopCardProps = {
-  id: number;
-  title: string;
-  image: string;
-  price: number;
-};
-
-export default function ShopCard({ id, title, image, price }: ShopCardProps) {
+export default function ShopCard({ id, title, image, price }) {
   const [amount, setAmount] = useState(1);
   const { cartItems, setCartItems } = useOutletContext();
 

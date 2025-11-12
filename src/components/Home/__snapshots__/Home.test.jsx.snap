@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home component > matches the snapshot 1`] = `
+<div>
+  <div
+    class="_container_d6eec2"
+  >
+    <div>
+      <h1
+        class="_heading_d6eec2"
+      >
+        Welcome to Tote
+      </h1>
+      <p
+        class="_para_d6eec2"
+      >
+        A long history of handmade jewelry & clothing.
+      </p>
+      <p
+        class="_para_d6eec2"
+      >
+        We take pride in the quality of our goods.
+      </p>
+    </div>
+  </div>
+</div>
+`;

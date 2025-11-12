@@ -1,21 +1,7 @@
 import styles from "./CartCard.module.css";
 import { useOutletContext } from "react-router";
 
-type CartCardProps = {
-  id: number;
-  title: string;
-  image: string;
-  amount: number;
-  price: number;
-};
-
-export default function CartCard({
-  id,
-  title,
-  image,
-  amount,
-  price,
-}: CartCardProps) {
+export default function CartCard({ id, title, image, amount, price }) {
   const { cartItems, setCartItems } = useOutletContext();
 
   function handleChange(e) {
@@ -24,7 +10,7 @@ export default function CartCard({
     if (newAmount === "") {
       setCartItems(
         cartItems.map((item) =>
-          item.id === id ? { ...item, amount: "" as any } : item
+          item.id === id ? { ...item, amount: "" } : item
         )
       );
       return;
